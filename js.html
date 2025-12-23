@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="r" placeholder="Rows">
+<input id="c" placeholder="Cols">
+<button onclick="transpose()">Find Transpose</button>
+
+<script>
+function transpose() {
+  let r = +document.getElementById("r").value;
+  let c = +document.getElementById("c").value;
+
+  let m = [];
+  for (let i = 0; i < r; i++) {
+    m[i] = [];
+    for (let j = 0; j < c; j++) {
+      m[i][j] = +prompt(`Enter element (${i},${j})`);
+    }
+  }
+
+  let t = [];
+  for (let i = 0; i < c; i++) {
+    t[i] = [];
+    for (let j = 0; j < r; j++) {
+      t[i][j] = m[j][i];
+    }
+    document.write(t[i] + "<br>");
+  }
+}
+</script>
+
+</body>
+</html>
